@@ -2,6 +2,7 @@ pipeline {
   agent any
 
   stages {
+
     stage('Checkout') {
       steps {
         git 'https://github.com/Laura4lilavati/Demo-Serenity-Cucumber.git'
@@ -10,7 +11,8 @@ pipeline {
 
     stage('Build & Test') {
       steps {
-        bat 'mvn clean verify'
+        // Ruta COMPLETA a Maven (fíjate en las dobles barras \\ y las comillas)
+        bat '"C:\\Maven\\apache-maven-3.8.6\\bin\\mvn.cmd" clean verify'
       }
     }
 
